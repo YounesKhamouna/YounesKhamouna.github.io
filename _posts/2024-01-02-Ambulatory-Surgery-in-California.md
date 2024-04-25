@@ -38,13 +38,17 @@ The first dataset specifically focuses on patients' county of residence and enco
 ## The Dashboard
 The dashboard comprises four pages with the overarching theme of "Ambulatory Surgery in California." These pages are organized as follows:
 
-## 1. Overview Page: This page provides a high-level summary of the field of ambulatory surgery within California. It provides essential statistics, including the number of patients, encounters, diagnoses, procedures, and payers, offering a panoramic view of the field.
+## 1. Overview Page: 
+This page provides a high-level summary of the field of ambulatory surgery within California. It provides essential statistics, including the number of patients, encounters, diagnoses, procedures, and payers, offering a panoramic view of the field.
 
-## 2. Diagnosis Page: On this page, you will find a detailed breakdown of ambulatory surgery cases categorized by diagnosis, year, and corresponding ICD10 code. This page allows to shed light on the prevalent medical conditions treated through ambulatory surgery in California.
+## 2. Diagnosis Page: 
+On this page, you will find a detailed breakdown of ambulatory surgery cases categorized by diagnosis, year, and corresponding ICD10 code. This page allows to shed light on the prevalent medical conditions treated through ambulatory surgery in California.
 
-## 3. Procedures Page: This page focuses on the procedures performed in ambulatory surgery settings, offering a comprehensive breakdown of the types of surgeries conducted in California.
+## 3. Procedures Page: 
+This page focuses on the procedures performed in ambulatory surgery settings, offering a comprehensive breakdown of the types of surgeries conducted in California.
 
-## 4. **Race and Gender Breakdown Page**: Here, you'll discover statistics and data related to ambulatory surgeries categorized by race and by gender, providing insights into the demographic aspects of ambulatory surgical care within the state.
+## 4. Race and Gender Breakdown Page: 
+Here, you'll discover statistics and data related to ambulatory surgeries categorized by race and by gender, providing insights into the demographic aspects of ambulatory surgical care within the state.
 
 Each of these pages contributes to a holistic understanding of ambulatory surgery in California, offering valuable insights from different angles for a more comprehensive view of this critical healthcare domain.
 
