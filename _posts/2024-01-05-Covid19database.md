@@ -31,14 +31,12 @@ EXEC sp_help 'CovidOthers';
 EXEC sp_help 'CovidConfirmedCases';
 </code>
 </pre>
-<br/>
-
 Examining the CovidDeaths table with ORDER BY continent, location provided a preliminary overview of the data organized by continent and location.
 <pre>
 <code>
-SELECT *  <br/>
-FROM CovidDeaths  <br/>
-ORDER BY continent, location;  <br/>
+SELECT *
+FROM CovidDeaths
+ORDER BY continent, location;
 </code>
 </pre>
        
@@ -66,7 +64,6 @@ UPDATE CovidDeaths
 SET date_updated = CONVERT(VARCHAR(10), date, 120);
 </code>
 </pre>
-<br/>
 ## Using SQL Queries To Calculate Public Health Indicators
 
 ## Cumulative Deaths
@@ -77,11 +74,11 @@ The query displaying continent, location, date_updated, and total_deaths ordered
        
 SELECT continent, location, date_updated, total_deaths
 FROM CovidDeaths
-WHERE continent IS NOT NULL AND location IS NOT NULL AND total_deaths IS NOT NULL
+WHERE continent IS NOT NULL AND location IS NOT NULL 
+       AND total_deaths IS NOT NULL
 ORDER BY date_updated DESC;  
 </code>
 </pre>
-<br/>
 ## Case Fatality Rate
 To calculate the case fatality rate (total deaths divided by total cases), the data types of total_cases and total_deaths in CovidConfirmedCases and CovidDeaths tables were changed to FLOAT respectively. This allows for numerical calculations.
 The subsequent query joins the CovidDeaths and CovidConfirmedCases tables based on location and date. It calculates the case fatality rate as a percentage and displays the results ordered by the latest date and then by the case fatality rate in descending order. This allows us to identify locations with the highest case fatality rates as of the latest update.
@@ -109,7 +106,6 @@ WHERE d.location IS NOT NULL
 ORDER BY d.date_updated DESC, case_fatality_rate DESC;
 </code>
 </pre>
-<br/>
 ## Population Infection Rate
 The final query calculates the population infection rate (total cases divided by total population) and displays the top 100 locations with the highest infection rates. It joins the CovidConfirmedCases and CovidOthers tables based on location and date. The population data is retrieved from the CovidOthers table. The results are ordered by the latest date and then by the population infection rate in descending order. This helps identify the locations with the most significant spread of the virus relative to their population size.
 <pre>
@@ -128,4 +124,3 @@ ORDER BY date_updated DESC, population_infection_rate DESC
 OFFSET 0 ROWS FETCH NEXT 100 ROWS ONLY;
 </code>
 </pre>
-<br/>
