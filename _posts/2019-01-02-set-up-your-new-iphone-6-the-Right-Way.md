@@ -1,40 +1,100 @@
 ---
 layout: post
-title: "How to Set Up Your New iPhone 6 the Right Way"
-description: "The iPhone 6 and Phone 6 Plus are smartphones designed and marketed by Apple Inc."
-date: 2019-01-02
-feature_image: images/iphone-6.jpg
-tags: [tips, design]
+title: "Ambulatory Surgery in California"
+description:
+date: 2024-01-02
+feature_image:
+tags: [PowerBI, Dashboard]
 ---
 
-The **iPhone 6** and **iPhone 6 Plus** are [smartphones](https://en.wikipedia.org/wiki/Smartphone) designed and marketed by Apple Inc. The devices are part of the iPhone series and were unveiled on September 9, 2014, and released on September 19, 2014. The iPhone 6 and iPhone 6 Plus jointly serve as successors to the iPhone 5C and iPhone 5S.
-
-The iPhone 6 and iPhone 6 Plus include a number of changes over their predecessor, including models with larger 4.7 and 5.5 inches (120 and 140 mm) displays, a faster processor, upgraded cameras, improved LTE and Wi-Fi connectivity and support for a near field communications-based mobile payments offering.
+This project utilized a comprehensive dataset comprising annual ambulatory surgery summary data in California, USA. I limited the timeframe for the data analysis to a period of five years, from 2017 to 2021.
+The dataset offers valuable insights and holds potential for future predictive analysis.
 
 <!--more-->
 
-Pre-orders of the iPhone 6 and iPhone 6 Plus exceeded four million within its first 24 hours of availability—an Apple record. More than ten million iPhone 6 and iPhone 6 Plus devices were sold in the first three days, another Apple record.
+## THE DATA
+There are 2 datasets for this project extracted from the website of the Department of Health Care Access and Information. 
+You can access the datasets from the links below: 
+-	Ambulatory Surgery - Characteristics by Patient County of Residence:  https://data.chhs.ca.gov/dataset/ambulatory-surgery-characteristics-by-patient-county-of-residence_ 
+-	Ambulatory Surgery - Diagnosis, Procedure, and External Cause Codes : https://data.chhs.ca.gov/dataset/ambulatory-surgery-diagnosis-procedure-and-external-cause-codes 
+The first dataset specifically focuses on patients' county of residence and encompasses essential information such as discharge disposition, expected payer, sex, and race group. Additionally, the second dataset includes statewide counts for each diagnosis and procedure, with diagnosis codes reported using either ICD-9-CM or ICD-10-CM, while procedure codes are reported using CPT-4. 
 
-On September 9, 2015, the 128 GB version of both the iPhone 6 and iPhone 6 Plus was discontinued along with the gold version of both phones, but the 16 GB and 64 GB versions of the iPhone 6 and iPhone 6 Plus in silver and space gray remain available for sale at a reduced price due to the release of the [iPhone 6S and iPhone 6S Plus flagship devices](https://en.wikipedia.org/wiki/IPhone_6S).
+## Techniques Used 
+1. Data Modelling
+2. Filters
+3. Slicers
+4. Drill-throughs
+5. Bookmarks
+6. DAX: CALCULATE, SUM, DISTINCTCOUNT, GROUPBY
 
-## History
 
-Centered around the device's size; the majority of iPhone models have used 3.5-inch displays—which are smaller than screens used by flagship phones from competitors. The last change in size for the iPhone series came with the iPhone 5; the phone and its immediate successors featured a display that was taller, but the same width as prior models, measuring at 4 inches diagonally. Following Apple's loss in smartphone market share to companies producing phones with larger displays reports as early as January 2014 suggested that Apple was preparing to launch new iPhone models with larger, 4.7-inch and 5.5-inch displays. Reports prior to its unveiling also speculated the possibility that Apple would use a new iPhone model to introduce a mobile payments platform using near-field communications—a technology that has been incorporated into many Android phones, but has experienced a low adoption rate among users.
+## QUESTIONS TO ANSWER
+1-	What are the top 5 common ambulatory surgery diagnosis performed in Californian hospitals, and how have they changed over the years?
+2-	What is the most common outcome after an ambulatory surgery in California?
+3-	Which payer(s) are most associated with ambulatory surgeries in California hospitals?
+4-	Is there a gender disparity in the utilization of ambulatory surgery services in California?
+5-	Is there a racial imbalance in the utilization of ambulatory surgeries?
 
-> What we want to do is make a leapfrog product that is way smarter than any mobile device has ever been, and super-easy to use. This is what iPhone is. OK? So, we’re going to reinvent the phone. <cite>- Steve Jobs, 2007.</cite>
+## The Dashboard
+The dashboard comprises four pages with the overarching theme of "Ambulatory Surgery in California." These pages are organized as follows:
 
-The iPhone 6 and iPhone 6 Plus were officially unveiled during a press event at the Flint Center for Performing Arts in Cupertino, California on September 9, 2014. The event featured other previously-rumored product announcements by Apple alongside the new iPhone models, including the [Apple Pay](https://en.wikipedia.org/wiki/Apple_Pay) mobile payment platform, and the company's entry into the wearable computing market with the Apple Watch smart watch.
+## 1. Overview Page: This page provides a high-level summary of the field of ambulatory surgery within California. It provides essential statistics, including the number of patients, encounters, diagnoses, procedures, and payers, offering a panoramic view of the field.
 
-{% include image_full.html imageurl="/images/iphone-in-hand.jpg" title="Apple" caption="iPhone 6" %}
+## 2. Diagnosis Page: On this page, you will find a detailed breakdown of ambulatory surgery cases categorized by diagnosis, year, and corresponding ICD10 code. This page allows to shed light on the prevalent medical conditions treated through ambulatory surgery in California.
 
-The iPhone 6 and iPhone 6 Plus were unveiled on September 9, 2014 and released on September 19, 2014; pre-orders began on September 12, 2014, with the iPhone 6 starting at US$649 and the iPhone 6 Plus starting at US$749. In China, where the iPhone 5S and 5C were the first models in the iPhone series to be released in the country on the same day as their international launch, Apple notified local wireless carriers that it would be unable to release the iPhone 6 and iPhone 6 Plus in China on the 19th because there were "details which are not ready"; local media reported that the devices had not yet been approved by the Ministry of Industry and Information Technology, and earlier in the year, a news report by state broadcaster China Central Television alleged that iPhone devices were a threat to national security because iOS 7's "frequent locations" function could expose "state secrets."
+## 3. Procedures Page: This page focuses on the procedures performed in ambulatory surgery settings, offering a comprehensive breakdown of the types of surgeries conducted in California.
 
-On August 2015 Apple admitted that some iPhone 6 Plus may have faulty cameras that could be causing photos to look blurry and initiated a replacement program.
+## 4. **Race and Gender Breakdown Page**: Here, you'll discover statistics and data related to ambulatory surgeries categorized by race and by gender, providing insights into the demographic aspects of ambulatory surgical care within the state.
 
-On September 9, 2015 the 128 GB version of both the iPhone 6 and iPhone 6 Plus was discontinued along with the gold version of both phones, the 16 GB and 64 GB versions of the iPhone 6 and iPhone 6 Plus in silver and space gray remain available for sale at a reduced price due to the release of the iPhone 6S and iPhone 6S Plus flagship devices.
+Each of these pages contributes to a holistic understanding of ambulatory surgery in California, offering valuable insights from different angles for a more comprehensive view of this critical healthcare domain.
 
-## Specifications
+## DATA ANALYSIS
 
-The design of the iPhone 6 and iPhone 6 Plus are influenced by that of the iPad Air with a glass front that is curved around the edges of the display, and an aluminum rear that contains two plastic strips for the antenna. Both models come in gold, silver, and "space gray" finishes. The iPhone 6 has a thickness of 6.9 millimetres (0.27 in), while the iPhone 6 Plus is 7.1 mm (0.28 in) in thickness; both are thinner than the iPhone 5S and iPhone 5C, with the iPhone 6 being Apple's thinnest phone to date. The most significant changes to the iPhone 6 and iPhone 6 Plus are its displays; both branded as "Retina HD Display" and "ion-strengthened", the iPhone 6 display is 4.7 inches in size with a 16:9 resolution of 1334x750 (326 PPI, minus one row of pixels), while the iPhone 6 Plus includes a 5.5-inch 1920x1080 (1080p) display (401 PPI). The displays use a multiple-domain LCD panel, dubbed "dual-domain pixels"; the RGB pixels themselves are skewed in pattern, so that every pixel is seen from a different angle. This technique helps improve the viewing angles of the display.
+## 1.	How has the number of ambulatory surgeries changed over the years in different counties of California?
+The number of ambulatory surgeries performed in California has shown a consistent increase since 2017, with a significant decline in the initial year of the COVID-19 pandemic. However, starting in 2021, the upward trend resumed, indicating a positive growth trajectory.
 
-To accommodate the larger physical size of the iPhone 6 and iPhone 6 Plus, the power button was moved to the side of the phone instead of the top to improve its accessibility. The iPhone 6 features a 6.91 Wh (1810 mAh) battery, while the iPhone 6 Plus features a 11.1 Wh (2915 mAh) battery. Unlike the previous model, the rear-facing camera is not flush with the rear of the device, and has a slight "bulge" around the lens. It has a dual-core 1.4 GHz Cyclone processor (ARM v8-based). [ [Source](https://en.wikipedia.org/wiki/IPhone_6) ]
+![image](https://github.com/YounesKhamouna/youneskhamouna.github.io/assets/142261924/7cc55597-ea9f-4161-a7be-1c266dbac90c)
+
+## 2-	What is the top diagnosis associated with ambulatory surgery performed in Californian hospitals, and how has it changed over the years?
+The top diagnosis associated with ambulatory surgery in California hospitals during the 2017-2021 timeframe is Essential Hypertension.
+The ICD-10 code I10, which corresponds to essential hypertension, was utilized in approximately 2.7 million encounters.
+
+![image](https://github.com/YounesKhamouna/youneskhamouna.github.io/assets/142261924/1c814bba-c93b-45bc-b686-8db957d6ac57)
+
+Starting from 2017, there was a consistent growth in the utilization of this diagnosis until 2020 when the COVID-19 pandemic had a significant impact. Consequently, the use of the I10 code experienced a sharp decline, reaching a low point of nearly 480,000 encounters. 
+However, following the initial year of the pandemic, the utilization of essential hypertension as a diagnosis is expected to recover and return to the same level as before the pandemic.
+
+![image](https://github.com/YounesKhamouna/youneskhamouna.github.io/assets/142261924/b2e07246-8480-4ce7-9e11-864e6351e9e6)
+
+## 2-	What is the most common outcome after ambulatory surgery in California?
+The most probable outcome following ambulatory surgery is a discharge to home. Out of the total patients, 1074 individuals unfortunately passed away, while approximately 20 million patients were successfully discharged to their homes. Additionally, the number of patients who died has slightly decreased during this period from 160 in 2012 to 94 in 2021.
+
+![image](https://github.com/YounesKhamouna/youneskhamouna.github.io/assets/142261924/28cb49ed-2551-4b97-8aab-311f05bcaba2)
+
+These findings suggest that ambulatory surgery performed in California hospitals is generally a safe procedure. Moreover, it may indicate that patients selected for this type of surgery have a lower likelihood of experiencing adverse outcomes and are more likely to have a safe recovery.
+
+## 3-	Which payer(s) are most commonly associated with ambulatory surgeries in California hospitals?
+On the financial side, the top payer expected after an ambulatory surgery in California hospitals between 2017-2021 is Medicare Part B. 
+A reminder that “Medicare Part B (Medical Insurance) are available to the individuals below:
+•	Age 65 or older  
+•	Disabled
+•	End-Stage Renal Disease (ESRD)” cms.gov
+
+![image](https://github.com/YounesKhamouna/youneskhamouna.github.io/assets/142261924/81fc3a10-8494-477e-bfd5-b52a42a25f8d)
+
+## 4-	Is there a gender disparity in the utilization of ambulatory surgery services in California? Is there a racial imbalance ?
+
+More female benefited from ambulatory surgery in California hospitals.
+
+![image](https://github.com/YounesKhamouna/youneskhamouna.github.io/assets/142261924/faf556dc-f9be-4591-9a32-f58bc37c595e)
+
+The same trend was observed in Los Angles, the most populated city in California. The Covid19 pandemic has almost the same impact in both reported sexes. 
+
+![image](https://github.com/YounesKhamouna/youneskhamouna.github.io/assets/142261924/51e8a5d8-bad4-442a-ad20-f5d9d309fa30)
+
+In terms of absolute numbers, individuals from the white racial group have the highest representation in receiving ambulatory surgeries (4M), followed by the Hispanic group(2M). 
+However, despite the equal proportions of these two populations in California(30%), there is an evident disparity in the distribution of benefits from ambulatory surgery among different racial groups. 
+The proportion of individuals belonging to the black racial group who undergo ambulatory surgeries is nearly proportional to their representation in the general population.
+
+![image](https://github.com/YounesKhamouna/youneskhamouna.github.io/assets/142261924/16b0da94-3871-497a-a9bf-7341fb134909)
+
