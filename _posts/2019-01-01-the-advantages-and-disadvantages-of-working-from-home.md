@@ -1,28 +1,86 @@
 ---
 layout: post
-title: "The Advantages & Disadvantages of Working from Home"
-description: "A work at home parent is an entrepreneur who works from home and integrates parenting into his or her business activities."
-date: 2019-01-01
-feature_image: images/desk.jpg 
-tags: [tips, work]
+title: "Opioid- and Stimulant-related Deaths in Canada 2018-2022"
+description: "Overview of The Data from Nova Scotia, Ontario, Alberta & British Columbia 2018 -2022."
+date: 2024-01-01
+feature_image: ![image](https://github.com/YounesKhamouna/youneskhamouna.github.io/assets/142261924/04fb6556-4d52-4581-9550-bcb7351c92a2)
+ 
+tags: [Excel, Dashboard, Public Health]
 ---
 
-A work at home parent is an entrepreneur who works from home and integrates parenting into his or her business activities. They are sometimes referred to as a WAHM *(work at home mom)* or a WAHD *(work at home dad)*.
+Canada is in the middle of a public health crisis due to the harm of opioids, stimulants, and other psychoactive substances. In this project, I choose to focus on the data related to deaths that covers the time period from 2018 to 2022, in three provinces: Nova Scotia, Ontario, Alberta and British Columbia. 
+The dataset offers valuable insights to tackle this crisis.
+![image](https://github.com/YounesKhamouna/youneskhamouna.github.io/assets/142261924/a633cbc0-9eab-4d0e-adac-801db35ce304)
 
-Entrepreneurs choose to run businesses from home for a variety of reasons, including lower business expenses, personal health limitations, eliminating commuting, or in order to have a more flexible schedule. This flexibility can give an entrepreneur more options when planning tasks, business and non-business, including parenting duties. While some home-based entrepreneurs opt for childcare outside the home,[1] others integrate child rearing into their work day and workspace. The latter are considered work-at-home parents.
 
 <!--more-->
 
-Many WAHPs start home-based businesses in order to care for their children while still creating income. The desire to care for one's own children, the incompatibility of a 9-to-5 work day with school hours or sick days, and the expense of childcare prompt many parents to change or leave their jobs in the workforce to be available to their children. Many WAHPs build a business schedule that can be integrated with their parenting duties.
+## The DATA
 
-## Concept
+The data for this project was extracted from the InfoBase of the Health Agency of Canada. 
+You can access the datasets from the links below: 
+-	the Federal, provincial, and territorial Special Advisory Committee on the Epidemic of Opioid Overdoses:  https://health-infobase.canada.ca/substance-related-harms/opioids-stimulants/ 
+Objectives
+The objective of this project is to display the data from the 3 provinces in an interactive dashboard to be able to compare them and to have insights about the opioid crisis in each provinces.
 
-The Fusion Festival combines all styles of the underground electronic music scene and various other styles, sometimes depending on the attendees who choose to play their own music. It is described as a space people go to free their minds from their everyday lives, jobs, studies and other responsibilities. It is the result of the search for an alternative through music, to the system "people are forced to live in". People go to the Fusion to experience a different way of socializing and living, where experiencing one another freely, sharing love for music and art connects different scenes and minds. It is a clothing-optional event. Art installations include performance arts, static artworks, sculptures, art cars and various other forms.
+## Techniques Used 
+1.	Data Cleaning +
+2.	Data Modelling: PowerQuery +
+3.	PivotTables +
+4.	PivotCharts +
+5.	Slicers +
+6.	Functions: SUMIFS -
+7.	Conditional Formatting -
 
-Fusion Festival began in 1997 near the city of Lärz in north-eastern Germany, about 160 km from Berlin and 230 km from Hamburg.
 
-## Festival Site
 
-The location is on the original grass-covered grounds of a disused military airfield (at 53°20′48.11″N 12°44′23.25″E for the 234-hectare area central field) about 4.5 km (2.25 miles) due north of the modern Rechlin-Lärz Airfield facility. The site was first acquired by the German Empire in 1916 as an aviation research and training ground, opening the facility for use by the Luftstreitkräfte in August 1918. After the establishment of the Luftwaffe in 1935, the field served as the Erprobungsstelle Rechlin central military aircraft test facility of the Third Reich through early 1945, and it was captured by the Soviet Red Army on May 2, 1945, for use by the VVS. 
 
-There are grass-covered concrete hangars (actual bunkers) from that time that were used for Soviet fighter aircraft (hence the Cyrillic transliteration of the festival name and various stages, as many Cyrillic inscriptions were still present on the site). The airfield was reopened for civilian use in 1994 and sold to the Müritz Airpark Group in 2010. [[Source](https://en.wikipedia.org/wiki/Fusion_Festival)]
+## QUESTIONS TO ANSWER
+1-	How did the death toll compare between the 4 provinces?
+2-	What is the death toll of stimulants compared to opioids?
+3-	What are the demographic specificities of the opioid’s crisis?
+4-	What is the origin of opioids and what kind of opioids are involved in opioid-related deaths?
+5-	 What type of stimulants are involved?
+
+
+
+## DATA ANALYSIS
+
+## 1 - How did the death toll compare between the 4 provinces?
+The number of opioids-related deaths has increased steadily in Ontario, Alberta, and BC starting 2019 until 2021. After 2021 we notice a sharp decline.
+Regarding Nova Scotia, the number of deaths stayed almost the same. 
+
+![image](https://github.com/YounesKhamouna/youneskhamouna.github.io/assets/142261924/4ec74d2d-6748-43a7-a08c-9c722670af2c)
+
+## 2-	What is the death toll of stimulants compared to opioids?
+Opioids are responsible of far more deaths in the 4 provinces than stimulants.
+Opioids are responsible for nearly 40,000 cumulative deaths in Ontario. There is no data about stimulants deaths in Alberta. 
+
+![image](https://github.com/YounesKhamouna/youneskhamouna.github.io/assets/142261924/724b7e43-e11e-4d2f-b08c-f883ff181bcb)
+
+
+## 3 - What are the demographic specificities of the opioid crisis?
+In all 4 provinces, Males represent mor than 2 thirds of opioids-related deaths. The highest male rate is in British Columbia where males are 75% among the victims. 
+The same tendency can be observed with stimulants. 
+The data available related to age groups is a national data and it shows that young people between 30 – 39 year-old are 27% among victims, followed by the 40-49 y-o by 23.2%. 
+
+![image](https://github.com/YounesKhamouna/youneskhamouna.github.io/assets/142261924/55aa667a-1758-48f5-adbd-a9b30d468ad1)
+
+## 4	- What is the origin of opioids and what kind of opioids are involved in opioid-related deaths?
+The non-pharmaceuticals opioids are the dominant cause of opioid-related deaths by more than 75% of cases. 
+
+
+ ![image](https://github.com/YounesKhamouna/youneskhamouna.github.io/assets/142261924/cf0e6b52-58d7-49a1-a618-3fd84d44666c)
+
+
+The fentanyl is the dominant type of opioid in the studied province except in Nova Scotia.
+Fentanyl is responsible of more than 75% of opioid-related deaths in Canada.
+ 
+![image](https://github.com/YounesKhamouna/youneskhamouna.github.io/assets/142261924/2d023f78-e9f8-4f31-bddd-90beb2cd28f4)
+
+
+## 5- What type of stimulants are involved?
+The cocaine is the main cause of deaths by stimulants in Canada and in the different provinces of our study by more being involved in more than 70 % of the cases.
+Methamphetamines are the second most common stimulants found in stimulants-related deaths. 
+
+![image](https://github.com/YounesKhamouna/youneskhamouna.github.io/assets/142261924/4991dda4-2748-4741-938a-79d90f7989d7)
