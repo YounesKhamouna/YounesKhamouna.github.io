@@ -23,11 +23,25 @@ The sp_help stored procedure revealed the schema of four tables: CovidDeaths, Co
 > - - Continues to select the Covid19World database for operations.  <br/>
 > USE Covid19World;  <br/>
 > <br/>
-> - - Retrieves table structure information >  <br/>
+> - - Retrieves table structure information <br/>
 > EXEC sp_help 'CovidDeaths'; <br/>
 > EXEC sp_help 'Covidvaccination';  <br/>
 > EXEC sp_help 'CovidOthers';  <br/>
 > EXEC sp_help 'CovidConfirmedCases';  <br/>
+
+<pre>
+<code>
+- - Continues to select the Covid19World database for operations.
+USE Covid19World;
+
+- - Retrieves table structure information
+EXEC sp_help 'CovidDeaths';
+EXEC sp_help 'Covidvaccination';
+EXEC sp_help 'CovidOthers';
+EXEC sp_help 'CovidConfirmedCases';
+</code>
+</pre>
+
 
 
 Examining the CovidDeaths table with ORDER BY continent, location provided a preliminary overview of the data organized by continent and location.  <br/>
