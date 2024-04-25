@@ -22,9 +22,11 @@ The sp_help stored procedure revealed the schema of four tables: CovidDeaths, Co
 <pre>
 <code>
 - - Continues to select the Covid19World database for operations.
+
 USE Covid19World;
 
 - - Retrieves table structure information
+
 EXEC sp_help 'CovidDeaths';
 EXEC sp_help 'Covidvaccination';
 EXEC sp_help 'CovidOthers';
@@ -82,8 +84,8 @@ ORDER BY date_updated DESC;
 ## Case Fatality Rate
 To calculate the case fatality rate (total deaths divided by total cases), the data types of total_cases and total_deaths in CovidConfirmedCases and CovidDeaths tables were changed to FLOAT respectively. This allows for numerical calculations.
 The subsequent query joins the CovidDeaths and CovidConfirmedCases tables based on location and date. It calculates the case fatality rate as a percentage and displays the results ordered by the latest date and then by the case fatality rate in descending order. This allows us to identify locations with the highest case fatality rates as of the latest update.
-<code>
 <pre>
+<code>
 -- Corrects data types for accurate calculations.
 
 ALTER TABLE CovidConfirmedCases
