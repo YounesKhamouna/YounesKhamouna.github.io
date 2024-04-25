@@ -1,33 +1,111 @@
 ---
 layout: post
-title: "Graphic Designer On The Road"
-description: "A graphic designer is a professional within the graphic design and graphic arts industry."
-date: 2022-01-05
-feature_image: images/road.jpg
-tags: [tips, work]
+title: "Exploring the COVID-19 World Database And 
+Calculating Three Key Public Health Indicators Using SQL"
+description:
+date: 2024-01-05
+feature_image: images/Covid19.jpg
+tags: [SQL, Public Health]
 ---
 
-A graphic designer is a professional within the graphic design and graphic arts industry who assembles together images, typography, or motion graphics to create a piece of design. A graphic designer creates the graphics primarily for published, printed or electronic media, such as brochures (sometimes) and advertising. They are also sometimes responsible for typesetting, illustration, user interfaces, web design, or take a teaching position. A core responsibility of the designer's job is to present information in a way that is both accessible and memorable.
+Exploring the COVID-19 World Database And Calculating Three Key Public Health Indicators Using SQL
+
 
 <!--more-->
 
 A degree or certificate from an accredited trade school is usually considered essential for a graphic design position. After a career history has been established, though, the graphic designer's experience and number of years in the business are considered the primary qualifications. A portfolio, which is the primary method for demonstrating these qualifications, is usually required to be shown at job interviews, and is constantly developed throughout a designer's career. [[Source](https://en.wikipedia.org/wiki/Graphic_designer)]
 
-Ice molecules can exhibit up to sixteen different phases _(packing geometries)_ that depend on temperature and pressure. When water is cooled rapidly (quenching), up to three different types of amorphous ice can form depending on the history of its pressure and temperature. When cooled slowly correlated proton tunneling occurs below 20 K giving rise to macroscopic quantum phenomena. Virtually all the ice on Earth's surface and in its atmosphere is of a hexagonal crystalline structure denoted as ice Ih (spoken as "ice one h") with minute traces of cubic ice denoted as ice Ic. The most common phase transition to ice Ih occurs when liquid water is cooled below 0°C (273.15K, 32°F) at standard atmospheric pressure. It may also be deposited directly by water vapor, as happens in the formation of frost. The transition from ice to water is melting and from ice directly to water vapor is sublimation.
+## Database Overview
+The Covid19World database contains several crucial tables for understanding the global impact of Covid-19, including CovidDeaths, CovidConfirmedCases, CovidVaccination, and CovidOthers. 
+Each table serves a unique role in providing comprehensive data on deaths, confirmed cases, vaccination figures, and other related metrics.
 
-## Characteristics
+## Data Exploration
+The sp_help stored procedure revealed the schema of four tables: CovidDeaths, Covidvaccination, CovidOthers, and CovidConfirmedCases. Each table likely holds information on a different aspect of Covid-19 data.
 
-As a naturally-occurring crystalline inorganic solid with an ordered structure, ice is considered a mineral.[citation needed] It possesses a regular crystalline structure based on the molecule of water, which consists of a single oxygen atom covalently bonded to two hydrogen atoms, or H-O-H. However, many of the physical properties of water and ice are controlled by the formation of hydrogen bonds between adjacent oxygen and hydrogen atoms; while it is a weak bond, it is nonetheless critical in controlling the structure of both water and ice.
+>USE Covid19World;
+-- Continues to select the Covid19World database for operations.
 
-> “ice contains no future , just the past, sealed away. As if they're alive, everything in the world is sealed up inside, clear and distinct. Ice can preserve all kinds of things that way- cleanly, clearly. That's the essence of ice, the role it plays.”
+EXEC sp_help 'CovidDeaths';
+EXEC sp_help 'Covidvaccination';
+EXEC sp_help 'CovidOthers';
+EXEC sp_help 'CovidConfirmedCases';
+-- Retrieves table structure information
 > <cite>― Haruki Murakami</cite>
 
-An unusual property of ice frozen at atmospheric pressure is that the solid is approximately 8.3% less dense than liquid water. The density of ice is 0.9167 g/cm3 at 0 °C,[4] whereas water has a density of 0.9998 g/cm³ at the same temperature. Liquid water is densest, essentially 1.00 g/cm³, at 4 °C and becomes less dense as the water molecules begin to form the hexagonal crystals[5] of ice as the freezing point is reached. This is due to hydrogen bonding dominating the intermolecular forces, which results in a packing of molecules less compact in the solid. Density of ice increases slightly with decreasing temperature and has a value of 0.9340 g/cm³ at −180 °C (93 K).[6]
+Examining the CovidDeaths table with ORDER BY continent, location provided a preliminary overview of the data organized by continent and location.
+>SELECT *
+FROM CovidDeaths
+ORDER BY continent, location;
+> <cite>
 
-When water freezes, it increases in volume (about 9% for freshwater).[7] The effect of expansion during freezing can be dramatic, and ice expansion is a basic cause of freeze-thaw weathering of rock in nature and damage to building foundations and roadways from frost heaving. It is also a common cause of the flooding of houses when water pipes burst due to the pressure of expanding water when it freezes.
+## Data Cleaning
 
-The result of this process is that ice _(in its most common form)_ floats on liquid water, which is an important feature in Earth's biosphere. It has been argued that without this property, natural bodies of water would freeze, in some cases permanently, from the bottom up,[8] resulting in a loss of bottom-dependent animal and plant life in fresh and sea water. Sufficiently thin ice sheets allow light to pass through while protecting the underside from short-term weather extremes such as wind chill. This creates a sheltered environment for bacterial and algal colonies. When sea water freezes, the ice is riddled with brine-filled channels which sustain sympagic organisms such as bacteria, algae, copepods and annelids, which in turn provide food for animals such as krill and specialised fish like the bald notothen, fed upon in turn by larger animals such as emperor penguins and minke whales.
+A key step in data cleaning includes ensuring data consistency by excluding rows with missing values in crucial columns. Therefore, we filtered the CovidDeaths table to exclude rows with missing values in continent and location columns. 
+Next, a new column date_updated was added to CovidDeaths and populated with the date formatted as "YYYY-MM-DD". This simplifies working with dates and improves readability and efficiency.
 
-When ice melts, it absorbs as much energy as it would take to heat an equivalent mass of water by 80 °C. During the melting process, the temperature remains constant at 0 °C. While melting, any energy added breaks the hydrogen bonds between ice (water) molecules. Energy becomes available to increase the thermal energy (temperature) only after enough hydrogen bonds are broken that the ice can be considered liquid water. The amount of energy consumed in breaking hydrogen bonds in the transition from ice to water is known as the heat of fusion.
+> -- Ensures data integrity by excluding rows where 'continent' or 'location' is null.
+SELECT *
+FROM CovidDeaths
+WHERE continent IS NOT NULL AND location IS NOT NULL
+ORDER BY continent, location;
 
-As with water, ice absorbs light at the red end of the spectrum preferentially as the result of an overtone of an oxygen-hydrogen (O-H) bond stretch. Compared with water, this absorption is shifted toward slightly lower energies. Thus, ice appears blue, with a slightly greener tint than for liquid water. Since absorption is cumulative, the color effect intensifies with increasing thickness or if internal reflections cause the light to take a longer path through the ice.
+-- Adds a new column for storing formatted dates.
+ALTER TABLE CovidDeaths
+ADD date_updated VARCHAR(10);
+
+-- Formats the 'date' column into 'YYYY-MM-DD'
+UPDATE CovidDeaths
+SET date_updated = CONVERT(VARCHAR(10), date, 120);
+
+> <cite>
+
+## Using SQL Queries To Calculate Public Health Indicators
+
+## Cumulative Deaths
+The query displaying continent, location, date_updated, and total_deaths ordered by the most recent date provides a snapshot of the latest cumulative deaths reported across different locations.
+
+> -- Orders by the most recent 'date_updated'.
+SELECT continent, location, date_updated, total_deaths
+FROM CovidDeaths
+WHERE continent IS NOT NULL AND location IS NOT NULL AND total_deaths IS NOT NULL
+ORDER BY date_updated DESC;
+> <cite>
+
+## Case Fatality Rate
+To calculate the case fatality rate (total deaths divided by total cases), the data types of total_cases and total_deaths in CovidConfirmedCases and CovidDeaths tables were changed to FLOAT respectively. This allows for numerical calculations.
+The subsequent query joins the CovidDeaths and CovidConfirmedCases tables based on location and date. It calculates the case fatality rate as a percentage and displays the results ordered by the latest date and then by the case fatality rate in descending order. This allows us to identify locations with the highest case fatality rates as of the latest update.
+
+> -- Corrects data types for accurate calculations.
+
+ALTER TABLE CovidConfirmedCases
+ALTER COLUMN total_cases FLOAT;
+
+ALTER TABLE CovidDeaths
+ALTER COLUMN total_deaths FLOAT;
+
+-- Calculates and orders by case fatality rate.
+-- The case fatality rate is a percentage
+
+SELECT d.location, d.date_updated, d.total_deaths, c.total_cases,
+       ROUND((d.total_deaths / c.total_cases) * 100, 4) AS case_fatality_rate
+FROM CovidDeaths AS d
+LEFT JOIN CovidConfirmedCases AS c ON d.location = c.location AND d.date_updated = c.date
+WHERE d.location IS NOT NULL AND d.total_deaths IS NOT NULL AND c.total_cases IS NOT NULL
+ORDER BY d.date_updated DESC, case_fatality_rate DESC;
+> <cite>
+
+## Population Infection Rate
+The final query calculates the population infection rate (total cases divided by total population) and displays the top 100 locations with the highest infection rates. It joins the CovidConfirmedCases and CovidOthers tables based on location and date. The population data is retrieved from the CovidOthers table. The results are ordered by the latest date and then by the population infection rate in descending order. This helps identify the locations with the most significant spread of the virus relative to their population size.
+
+-- Calculate the Population Infection rate: Total cases/ Total Population
+-- Display TOP 100 highest infection rates, ensuring all necessary columns are non-null.
+
+>
+SELECT c.location, FORMAT(c.date, 'yyyy-MM-dd') AS date_updated, o.population, c.total_cases,
+       ROUND((c.total_cases / o.population) * 100, 2) AS population_infection_rate
+FROM CovidConfirmedCases AS c
+LEFT JOIN CovidOthers AS o ON c.location = o.location AND c.date = o.date
+WHERE c.continent IS NOT NULL AND c.location IS NOT NULL AND c.total_cases IS NOT NULL
+ORDER BY date_updated DESC, population_infection_rate DESC
+OFFSET 0 ROWS FETCH NEXT 100 ROWS ONLY;
+> <cite>
