@@ -3,7 +3,7 @@ layout: post
 title: "Ambulatory Surgery in California"
 description:
 date: 2024-01-02
-feature_image:
+feature_image: images/PowerBi.jpg
 tags: [PowerBI, Dashboard]
 ---
 
