@@ -10,8 +10,6 @@ tags: [Excel, Dashboard, Public Health]
 
 Canada is in the middle of a public health crisis due to the harm of opioids, stimulants, and other psychoactive substances. In this project, I choose to focus on the data related to deaths that covers the time period from 2018 to 2022, in three provinces: Nova Scotia, Ontario, Alberta and British Columbia. 
 The dataset offers valuable insights to tackle this crisis.
-![image](https://github.com/YounesKhamouna/youneskhamouna.github.io/assets/142261924/a633cbc0-9eab-4d0e-adac-801db35ce304)
-
 
 <!--more-->
 
