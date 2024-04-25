@@ -3,7 +3,7 @@ layout: post
 title: "Opioid- and Stimulant-related Deaths in Canada 2018-2022"
 description: "Overview of The Data from Nova Scotia, Ontario, Alberta & British Columbia 2018 -2022."
 date: 2024-01-01
-feature_image: ![image](https://github.com/YounesKhamouna/youneskhamouna.github.io/assets/142261924/04fb6556-4d52-4581-9550-bcb7351c92a2)
+feature_image: images/Dashboard.jpg
  
 tags: [Excel, Dashboard, Public Health]
 ---
