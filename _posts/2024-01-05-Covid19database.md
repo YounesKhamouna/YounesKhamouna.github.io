@@ -20,10 +20,10 @@ Each table serves a unique role in providing comprehensive data on deaths, confi
 ## Data Exploration
 The sp_help stored procedure revealed the schema of four tables: CovidDeaths, Covidvaccination, CovidOthers, and CovidConfirmedCases. Each table likely holds information on a different aspect of Covid-19 data.
 
-> -- Continues to select the Covid19World database for operations.  <br/>
+> - - Continues to select the Covid19World database for operations.  <br/>
 > USE Covid19World;  <br/>
 > <br/>
-> -- Retrieves table structure information >  <br/>
+> - - Retrieves table structure information >  <br/>
 > EXEC sp_help 'CovidDeaths'; <br/>
 > EXEC sp_help 'Covidvaccination';  <br/>
 > EXEC sp_help 'CovidOthers';  <br/>
