@@ -23,28 +23,29 @@ The sp_help stored procedure revealed the schema of four tables: CovidDeaths, Co
 <pre>
 <code>
 - - Continues to select the Covid19World database for operations.
-
 USE Covid19World;
 
 - - Retrieves table structure information
-
 EXEC sp_help 'CovidDeaths';
 EXEC sp_help 'Covidvaccination';
 EXEC sp_help 'CovidOthers';
 EXEC sp_help 'CovidConfirmedCases';
 </code>
 </pre>
+<br/>
+<br/>
 
-
-<pre>
-<code>
 Examining the CovidDeaths table with ORDER BY continent, location provided a preliminary overview of the data organized by continent and location.  <br/>
->SELECT *  <br/>
->FROM CovidDeaths  <br/>
->ORDER BY continent, location;  <br/>
->  <br/>
+
 <pre>
 <code>
+
+SELECT *  <br/>
+FROM CovidDeaths  <br/>
+ORDER BY continent, location;  <br/>
+
+</code>
+</pre>
        
 ## Data Cleaning
 
@@ -71,30 +72,41 @@ ADD date_updated VARCHAR(10);
 UPDATE CovidDeaths
 SET date_updated = CONVERT(VARCHAR(10), date, 120);
 
-<pre>
-<code>
-
+</code>
+</pre>
+<br/>
 ## Using SQL Queries To Calculate Public Health Indicators
 
 ## Cumulative Deaths
 The query displaying continent, location, date_updated, and total_deaths ordered by the most recent date provides a snapshot of the latest cumulative deaths reported across different locations.
+<br/>
+<br/>
 
-> -- Orders by the most recent 'date_updated'.
+<pre>
+<code>
+       
+-- Orders by the most recent 'date_updated'
+       
 SELECT continent, location, date_updated, total_deaths
 FROM CovidDeaths
 WHERE continent IS NOT NULL AND location IS NOT NULL AND total_deaths IS NOT NULL
 ORDER BY date_updated DESC;
->
-
+       
+</code>
+</pre>
+<br/>
 ## Case Fatality Rate
 To calculate the case fatality rate (total deaths divided by total cases), the data types of total_cases and total_deaths in CovidConfirmedCases and CovidDeaths tables were changed to FLOAT respectively. This allows for numerical calculations.
 The subsequent query joins the CovidDeaths and CovidConfirmedCases tables based on location and date. It calculates the case fatality rate as a percentage and displays the results ordered by the latest date and then by the case fatality rate in descending order. This allows us to identify locations with the highest case fatality rates as of the latest update.
 
-> -- Corrects data types for accurate calculations.
+</code>
+</pre>
+
+-- Corrects data types for accurate calculations.
 
 ALTER TABLE CovidConfirmedCases
 ALTER COLUMN total_cases FLOAT;
-
+--
 ALTER TABLE CovidDeaths
 ALTER COLUMN total_deaths FLOAT;
 
@@ -107,12 +119,18 @@ FROM CovidDeaths AS d
 LEFT JOIN CovidConfirmedCases AS c ON d.location = c.location AND d.date_updated = c.date
 WHERE d.location IS NOT NULL AND d.total_deaths IS NOT NULL AND c.total_cases IS NOT NULL
 ORDER BY d.date_updated DESC, case_fatality_rate DESC;
->
 
+</code>
+</pre>
+<br/>
+<br/>
 ## Population Infection Rate
 The final query calculates the population infection rate (total cases divided by total population) and displays the top 100 locations with the highest infection rates. It joins the CovidConfirmedCases and CovidOthers tables based on location and date. The population data is retrieved from the CovidOthers table. The results are ordered by the latest date and then by the population infection rate in descending order. This helps identify the locations with the most significant spread of the virus relative to their population size.
 
-> -- Calculate the Population Infection rate: Total cases/ Total Population
+<pre>
+<code>
+
+-- Calculate the Population Infection rate: Total cases/ Total Population
 -- Display TOP 100 highest infection rates, ensuring all necessary columns are non-null.
 
 SELECT c.location, FORMAT(c.date, 'yyyy-MM-dd') AS date_updated, o.population, c.total_cases,
@@ -122,4 +140,5 @@ LEFT JOIN CovidOthers AS o ON c.location = o.location AND c.date = o.date
 WHERE c.continent IS NOT NULL AND c.location IS NOT NULL AND c.total_cases IS NOT NULL
 ORDER BY date_updated DESC, population_infection_rate DESC
 OFFSET 0 ROWS FETCH NEXT 100 ROWS ONLY;
->
+</code>
+</pre>
