@@ -13,8 +13,6 @@ Exploring the COVID-19 World Database And Calculating Three Key Public Health In
 
 <!--more-->
 
-A degree or certificate from an accredited trade school is usually considered essential for a graphic design position. After a career history has been established, though, the graphic designer's experience and number of years in the business are considered the primary qualifications. A portfolio, which is the primary method for demonstrating these qualifications, is usually required to be shown at job interviews, and is constantly developed throughout a designer's career. [[Source](https://en.wikipedia.org/wiki/Graphic_designer)]
-
 ## Database Overview
 The Covid19World database contains several crucial tables for understanding the global impact of Covid-19, including CovidDeaths, CovidConfirmedCases, CovidVaccination, and CovidOthers. 
 Each table serves a unique role in providing comprehensive data on deaths, confirmed cases, vaccination figures, and other related metrics.
@@ -30,13 +28,13 @@ EXEC sp_help 'Covidvaccination';
 EXEC sp_help 'CovidOthers';
 EXEC sp_help 'CovidConfirmedCases';
 -- Retrieves table structure information
-> <cite>― Haruki Murakami</cite>
+>
 
 Examining the CovidDeaths table with ORDER BY continent, location provided a preliminary overview of the data organized by continent and location.
 >SELECT *
 FROM CovidDeaths
 ORDER BY continent, location;
-> <cite>
+>
 
 ## Data Cleaning
 
@@ -69,7 +67,7 @@ SELECT continent, location, date_updated, total_deaths
 FROM CovidDeaths
 WHERE continent IS NOT NULL AND location IS NOT NULL AND total_deaths IS NOT NULL
 ORDER BY date_updated DESC;
-> <cite>
+>
 
 ## Case Fatality Rate
 To calculate the case fatality rate (total deaths divided by total cases), the data types of total_cases and total_deaths in CovidConfirmedCases and CovidDeaths tables were changed to FLOAT respectively. This allows for numerical calculations.
@@ -92,15 +90,14 @@ FROM CovidDeaths AS d
 LEFT JOIN CovidConfirmedCases AS c ON d.location = c.location AND d.date_updated = c.date
 WHERE d.location IS NOT NULL AND d.total_deaths IS NOT NULL AND c.total_cases IS NOT NULL
 ORDER BY d.date_updated DESC, case_fatality_rate DESC;
-> <cite>
+>
 
 ## Population Infection Rate
 The final query calculates the population infection rate (total cases divided by total population) and displays the top 100 locations with the highest infection rates. It joins the CovidConfirmedCases and CovidOthers tables based on location and date. The population data is retrieved from the CovidOthers table. The results are ordered by the latest date and then by the population infection rate in descending order. This helps identify the locations with the most significant spread of the virus relative to their population size.
 
--- Calculate the Population Infection rate: Total cases/ Total Population
+> -- Calculate the Population Infection rate: Total cases/ Total Population
 -- Display TOP 100 highest infection rates, ensuring all necessary columns are non-null.
 
->
 SELECT c.location, FORMAT(c.date, 'yyyy-MM-dd') AS date_updated, o.population, c.total_cases,
        ROUND((c.total_cases / o.population) * 100, 2) AS population_infection_rate
 FROM CovidConfirmedCases AS c
@@ -108,4 +105,4 @@ LEFT JOIN CovidOthers AS o ON c.location = o.location AND c.date = o.date
 WHERE c.continent IS NOT NULL AND c.location IS NOT NULL AND c.total_cases IS NOT NULL
 ORDER BY date_updated DESC, population_infection_rate DESC
 OFFSET 0 ROWS FETCH NEXT 100 ROWS ONLY;
-> <cite>
+>
