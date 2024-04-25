@@ -99,8 +99,8 @@ ORDER BY date_updated DESC;
 To calculate the case fatality rate (total deaths divided by total cases), the data types of total_cases and total_deaths in CovidConfirmedCases and CovidDeaths tables were changed to FLOAT respectively. This allows for numerical calculations.
 The subsequent query joins the CovidDeaths and CovidConfirmedCases tables based on location and date. It calculates the case fatality rate as a percentage and displays the results ordered by the latest date and then by the case fatality rate in descending order. This allows us to identify locations with the highest case fatality rates as of the latest update.
 
-</code>
-</pre>
+<code>
+<pre>
 
 -- Corrects data types for accurate calculations.
 
@@ -116,8 +116,11 @@ ALTER COLUMN total_deaths FLOAT;
 SELECT d.location, d.date_updated, d.total_deaths, c.total_cases,
        ROUND((d.total_deaths / c.total_cases) * 100, 4) AS case_fatality_rate
 FROM CovidDeaths AS d
-LEFT JOIN CovidConfirmedCases AS c ON d.location = c.location AND d.date_updated = c.date
-WHERE d.location IS NOT NULL AND d.total_deaths IS NOT NULL AND c.total_cases IS NOT NULL
+LEFT JOIN CovidConfirmedCases AS c ON d.location = c.location 
+                                   AND d.date_updated = c.date
+WHERE d.location IS NOT NULL 
+    AND d.total_deaths IS NOT NULL 
+    AND c.total_cases IS NOT NULL
 ORDER BY d.date_updated DESC, case_fatality_rate DESC;
 
 </code>
@@ -133,11 +136,13 @@ The final query calculates the population infection rate (total cases divided by
 -- Calculate the Population Infection rate: Total cases/ Total Population
 -- Display TOP 100 highest infection rates, ensuring all necessary columns are non-null.
 
-SELECT c.location, FORMAT(c.date, 'yyyy-MM-dd') AS date_updated, o.population, c.total_cases,
+SELECT c.location, FORMAT(c.date, 'yyyy-MM-dd') AS date_updated, 
+       o.population, c.total_cases,
        ROUND((c.total_cases / o.population) * 100, 2) AS population_infection_rate
 FROM CovidConfirmedCases AS c
 LEFT JOIN CovidOthers AS o ON c.location = o.location AND c.date = o.date
-WHERE c.continent IS NOT NULL AND c.location IS NOT NULL AND c.total_cases IS NOT NULL
+WHERE c.continent IS NOT NULL 
+       AND c.location IS NOT NULL AND c.total_cases IS NOT NULL
 ORDER BY date_updated DESC, population_infection_rate DESC
 OFFSET 0 ROWS FETCH NEXT 100 ROWS ONLY;
 </code>
