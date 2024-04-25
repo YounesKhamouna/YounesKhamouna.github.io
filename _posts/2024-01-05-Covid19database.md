@@ -20,21 +20,14 @@ Each table serves a unique role in providing comprehensive data on deaths, confi
 ## Data Exploration
 The sp_help stored procedure revealed the schema of four tables: CovidDeaths, Covidvaccination, CovidOthers, and CovidConfirmedCases. Each table likely holds information on a different aspect of Covid-19 data.
 
-> - - Continues to select the Covid19World database for operations.  <br/>
-> USE Covid19World;  <br/>
-> <br/>
-> - - Retrieves table structure information <br/>
-> EXEC sp_help 'CovidDeaths'; <br/>
-> EXEC sp_help 'Covidvaccination';  <br/>
-> EXEC sp_help 'CovidOthers';  <br/>
-> EXEC sp_help 'CovidConfirmedCases';  <br/>
-
 <pre>
 <code>
 - - Continues to select the Covid19World database for operations.
+
 USE Covid19World;
 
 - - Retrieves table structure information
+
 EXEC sp_help 'CovidDeaths';
 EXEC sp_help 'Covidvaccination';
 EXEC sp_help 'CovidOthers';
@@ -43,33 +36,43 @@ EXEC sp_help 'CovidConfirmedCases';
 </pre>
 
 
-
+<pre>
+<code>
 Examining the CovidDeaths table with ORDER BY continent, location provided a preliminary overview of the data organized by continent and location.  <br/>
 >SELECT *  <br/>
 >FROM CovidDeaths  <br/>
 >ORDER BY continent, location;  <br/>
 >  <br/>
-
+<pre>
+<code>
+       
 ## Data Cleaning
 
 A key step in data cleaning includes ensuring data consistency by excluding rows with missing values in crucial columns. Therefore, we filtered the CovidDeaths table to exclude rows with missing values in continent and location columns. 
 Next, a new column date_updated was added to CovidDeaths and populated with the date formatted as "YYYY-MM-DD". This simplifies working with dates and improves readability and efficiency.
 
-> -- Ensures data integrity by excluding rows where 'continent' or 'location' is null.
+<pre>
+<code> 
+
+-- Ensures data integrity by excluding rows where 'continent' or 'location' is null.
+
 SELECT *
 FROM CovidDeaths
 WHERE continent IS NOT NULL AND location IS NOT NULL
 ORDER BY continent, location;
 
 -- Adds a new column for storing formatted dates.
+
 ALTER TABLE CovidDeaths
 ADD date_updated VARCHAR(10);
 
 -- Formats the 'date' column into 'YYYY-MM-DD'
+
 UPDATE CovidDeaths
 SET date_updated = CONVERT(VARCHAR(10), date, 120);
 
-> <cite>
+<pre>
+<code>
 
 ## Using SQL Queries To Calculate Public Health Indicators
 
