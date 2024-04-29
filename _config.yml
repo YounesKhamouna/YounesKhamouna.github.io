@@ -18,7 +18,7 @@ description: "Data Analyst with Medical Background Proficient in SQL, PowerBI, E
 baseurl: ""
 
 # The base hostname & protocol of your site for where absolute urls are needed.
-url: "https://scriptor-jekyll.netlify.com"
+url: "https://youneskhamouna.github.io/"
 
 # Favicon
 favicon: images/favicon.png
@@ -30,12 +30,12 @@ google_analytics: ""
 navigation:
   - text: Home
     url: /
-  - text: About
-    url: /about/
-  - text: Projects
-    url: /Projects/
-  - text: Download
-    url: https://github.com/JustGoodThemes/Scriptor-Jekyll-Theme
+  - #text: About
+    #url: /about/
+  - #text: Projects
+    #url: /Projects/
+  - #text: Download
+    #url: https://github.com/JustGoodThemes/Scriptor-Jekyll-Theme
 
 # The shortname for your Disqus site to enable comments.
 disqus: justgoodthemes
@@ -45,7 +45,7 @@ accent_color: '#2d72d9'
 
 # Site footer
 footer:
-  content: "&copy; Younes all rights reserved."
+  content: "&copy; Younes 2024 all rights reserved."
   has_social: true
 
 # Plugins
