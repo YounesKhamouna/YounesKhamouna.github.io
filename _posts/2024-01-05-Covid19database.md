@@ -15,10 +15,11 @@ Exploring the COVID-19 World Database And Calculating Three Key Public Health In
 
 ## Database Overview
 The Covid19World database contains several crucial tables for understanding the global impact of Covid-19, including CovidDeaths, CovidConfirmedCases, CovidVaccination, and CovidOthers. 
-Each table serves a unique role in providing comprehensive data on deaths, confirmed cases, vaccination figures, and other related metrics.
+The SQL queries cover a range of operations, including data exploration, data cleaning, complex queries, view creation, and temporary table manipulation, reflecting the coder's ability to handle extensive and intricate database tasks effectively.
 
 ## Data Exploration
-The sp_help stored procedure revealed the schema of four tables: CovidDeaths, Covidvaccination, CovidOthers, and CovidConfirmedCases. Each table likely holds information on a different aspect of Covid-19 data.
+The exploration phase utilized the sp_help stored procedure to describe the structure of the tables: CovidDeaths, CovidVaccination, CovidOthers, CovidConfirmedCases, and CovidHospitalICU. 
+These tables include key information about COVID-19's impact across different global locations and dates, which were ordered by location and date to organize the data chronologically and geographically.
 <pre>
 <code>
 - - Continues to select the Covid19World database for operations.
@@ -45,7 +46,7 @@ ORDER BY continent, location;
 ## Data Cleaning
 
 A key step in data cleaning includes ensuring data consistency by excluding rows with missing values in crucial columns. Therefore, we filtered the CovidDeaths table to exclude rows with missing values in continent and location columns. 
-Next, a new column date_updated was added to CovidDeaths and populated with the date formatted as "YYYY-MM-DD". This simplifies working with dates and improves readability and efficiency.
+Next, a new column date_updated was added to CovidDeaths and populated with the date formatted as "YYYY-MM-DD" to facilitate temporal analysis. This simplifies working with dates and improves readability and efficiency.
 <pre>
 <code> 
 -- Ensures data integrity by excluding rows where 'continent' or 'location' is null.
@@ -66,8 +67,20 @@ UPDATE CovidDeaths
 SET date_updated = CONVERT(VARCHAR(10), date, 120);
 </code>
 </pre>
-## Using SQL Queries To Calculate Public Health Indicators
+## Analysis and Insights
 
+##Top 20 Countries by Cumulative Death Count
+The query identified the top 20 countries with the highest cumulative death count by the most recent date available. This was facilitated by a grouping and ordering operation on the CovidDeaths table, highlighting the severe impact in specific countries.
+<pre>
+<code> 
+SELECT location, Max(date_updated) as Updated, MAX(total_deaths) as TotalDeathCount
+FROM CovidDeaths
+WHERE continent IS NOT NULL AND location IS NOT NULL
+GROUP BY LOCATION
+ORDER BY TotalDeathCount DESC
+OFFSET 0 ROWS FETCH NEXT 20 ROWS ONLY;
+</code>
+</pre>
 ## Cumulative Deaths
 The query displaying continent, location, date_updated, and total_deaths ordered by the most recent date provides a snapshot of the latest cumulative deaths reported across different locations.
 <pre>
@@ -126,3 +139,48 @@ ORDER BY date_updated DESC, population_infection_rate DESC
 OFFSET 0 ROWS FETCH NEXT 100 ROWS ONLY;
 </code>
 </pre>
+## Vaccination Analysis
+The vaccination rate was calculated as the percentage of the population that has been vaccinated, identifying the top 20 locations with the highest rates. 
+<pre>
+<code>
+SELECT d.location, MAX (date_updated) as Updated, o.population,  
+       MAX(v.people_vaccinated_per_hundred) as Total_Vaccinated_per_hundred, 
+       ROUND((MAX(v.people_vaccinated)/ o.population),2)*100 as Vaccination_rate
+FROM CovidDeaths AS d
+LEFT JOIN CovidVaccination AS v ON d.location = v.location AND d.date_updated = v.date
+LEFT JOIN CovidOthers AS o ON d.location = o.location AND d.date_updated = o.date
+WHERE d.continent IS NOT NULL AND d.location IS NOT NULL 
+GROUP BY d.continent, d.location, o.population
+ORDER BY Vaccination_rate DESC
+OFFSET 0 ROWS FETCH NEXT 20 ROWS ONLY;
+</code>
+</pre>
+## Comparative Analysis: Chronic Diseases and COVID-19
+A temporary table, #CovidAndChronicDiseases, was created to explore the correlation between COVID-19 deaths and chronic diseases like cardiovascular issues and diabetes.
+<pre>
+<code>
+DROP TABLE IF EXISTS #CovidAndChronicDiseases;
+CREATE TABLE #CovidAndChronicDiseases (
+    Location NVARCHAR(255),
+    date DATETIME,
+    Total_deaths NUMERIC,
+    cardiovasc_death_rate NUMERIC,
+    diabetes_prevalence NUMERIC
+);
+
+INSERT INTO #CovidAndChronicDiseases (
+    Location, date, Total_deaths, cardiovasc_death_rate, diabetes_prevalence
+)
+SELECT d.location, FORMAT(d.date, 'yyyy-MM-dd') as date_updated,    
+       MAX(d.Total_deaths) OVER (PARTITION BY d.continent, d.date_updated) AS Cumulative_death,
+       o.cardiovasc_death_rate, o.diabetes_prevalence
+FROM CovidDeaths AS d
+LEFT JOIN CovidOthers AS o ON d.date_updated = o.date AND d.continent = o.continent AND d.location = o.location
+WHERE d.continent IS NOT NULL AND d.location IS NOT NULL AND d.total_deaths IS NOT NULL
+ORDER BY d.Continent, d.Location;
+</code>
+</pre>
+## International Comparisons
+The queries facilitated international comparisons, such as assessing vaccination rates and cumulative deaths in Canada relative to other nations like the USA, UK, and India. This comparative approach provides a broader context for evaluating Canada's pandemic response.
+## Conclusion
+This project SQL highlights the critical insights that can be derived from well-structured SQL queries in understanding public health crises.
