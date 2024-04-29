@@ -29,11 +29,11 @@ The first dataset specifically focuses on patients' county of residence and enco
 
 
 ## QUESTIONS TO ANSWER
-1-	What are the top 5 common ambulatory surgery diagnosis performed in Californian hospitals, and how have they changed over the years?
-2-	What is the most common outcome after an ambulatory surgery in California?
-3-	Which payer(s) are most associated with ambulatory surgeries in California hospitals?
-4-	Is there a gender disparity in the utilization of ambulatory surgery services in California?
-5-	Is there a racial imbalance in the utilization of ambulatory surgeries?
+1-	What are the top 5 common ambulatory surgery diagnosis performed in Californian hospitals, and how have they changed over the years? <br/>
+2-	What is the most common outcome after an ambulatory surgery in California? <br/>
+3-	Which payer(s) are most associated with ambulatory surgeries in California hospitals? <br/>
+4-	Is there a gender disparity in the utilization of ambulatory surgery services in California? <br/>
+5-	Is there a racial imbalance in the utilization of ambulatory surgeries? <br/>
 
 ## The Dashboard
 The dashboard comprises four pages with the overarching theme of "Ambulatory Surgery in California." These pages are organized as follows:
