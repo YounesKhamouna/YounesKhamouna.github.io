@@ -40,7 +40,7 @@ The dashboard comprises four pages with the overarching theme of "Ambulatory Sur
 
 ## 1. Overview Page: 
 This page provides a high-level summary of the field of ambulatory surgery within California. It provides essential statistics, including the number of patients, encounters, diagnoses, procedures, and payers, offering a panoramic view of the field.
-images/overview_page.png
+feature_image: images/Overview_page.png
 ## 2. Diagnosis Page: 
 On this page, you will find a detailed breakdown of ambulatory surgery cases categorized by diagnosis, year, and corresponding ICD10 code. This page allows to shed light on the prevalent medical conditions treated through ambulatory surgery in California.
 
