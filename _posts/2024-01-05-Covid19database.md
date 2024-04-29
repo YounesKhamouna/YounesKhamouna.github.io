@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "Exploring the COVID-19 World Database And 
-Calculating Three Key Public Health Indicators Using SQL"
+title: "Exploring the COVID-19 World Database Using SQL"
 description:
 date: 2024-01-05
 feature_image: images/Covid19.jpg
@@ -184,7 +183,7 @@ ORDER BY d.Continent, d.Location;
 ## 2-International Comparisons
 The queries facilitated international comparisons, such as assessing vaccination rates and cumulative deaths in Canada relative to other nations like the USA, UK, and India. This comparative approach provides a broader context for evaluating Canada's pandemic response.
 
-##. Reporting and Visualization
+## Reporting and Visualization
 The script emphasizes the creation of views for later visualization, aiding in reporting:
 <pre>
 <code>
