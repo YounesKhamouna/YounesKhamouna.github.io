@@ -155,7 +155,8 @@ ORDER BY Vaccination_rate DESC
 OFFSET 0 ROWS FETCH NEXT 20 ROWS ONLY;
 </code>
 </pre>
-## Comparative Analysis: Chronic Diseases and COVID-19
+## Comparative Analysis: 
+## 1-Chronic Diseases and COVID-19
 A temporary table, #CovidAndChronicDiseases, was created to explore the correlation between COVID-19 deaths and chronic diseases like cardiovascular issues and diabetes.
 <pre>
 <code>
@@ -180,7 +181,19 @@ WHERE d.continent IS NOT NULL AND d.location IS NOT NULL AND d.total_deaths IS N
 ORDER BY d.Continent, d.Location;
 </code>
 </pre>
-## International Comparisons
+## 2-International Comparisons
 The queries facilitated international comparisons, such as assessing vaccination rates and cumulative deaths in Canada relative to other nations like the USA, UK, and India. This comparative approach provides a broader context for evaluating Canada's pandemic response.
+
+##. Reporting and Visualization
+The script emphasizes the creation of views for later visualization, aiding in reporting:
+<pre>
+<code>
+CREATE VIEW CaseFatalityRate AS 
+SELECT location, date_updated, total_deaths, total_cases,
+ROUND((total_deaths / total_cases) * 100, 4) as case_fatality_rate
+FROM ...;
+</code>
+</pre>
+
 ## Conclusion
 This project SQL highlights the critical insights that can be derived from well-structured SQL queries in understanding public health crises.
