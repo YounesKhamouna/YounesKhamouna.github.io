@@ -40,15 +40,19 @@ The dashboard comprises four pages with the overarching theme of "Ambulatory Sur
 
 ## 1. Overview Page: 
 This page provides a high-level summary of the field of ambulatory surgery within California. It provides essential statistics, including the number of patients, encounters, diagnoses, procedures, and payers, offering a panoramic view of the field.
-feature_image: images/Overview_page.png
+![image](https://github.com/YounesKhamouna/youneskhamouna.github.io/assets/142261924/05f274e3-e03f-4f2d-ab81-7cd51b58911f)
+
 ## 2. Diagnosis Page: 
 On this page, you will find a detailed breakdown of ambulatory surgery cases categorized by diagnosis, year, and corresponding ICD10 code. This page allows to shed light on the prevalent medical conditions treated through ambulatory surgery in California.
+![image](https://github.com/YounesKhamouna/youneskhamouna.github.io/assets/142261924/4eae631e-8266-44b6-9705-772bb4753ed9)
 
 ## 3. Procedures Page: 
 This page focuses on the procedures performed in ambulatory surgery settings, offering a comprehensive breakdown of the types of surgeries conducted in California.
+![image](https://github.com/YounesKhamouna/youneskhamouna.github.io/assets/142261924/db09adbc-922f-4b7e-80e3-49d95e828773)
 
 ## 4. Race and Gender Breakdown Page: 
 Here, you'll discover statistics and data related to ambulatory surgeries categorized by race and by gender, providing insights into the demographic aspects of ambulatory surgical care within the state.
+![image](https://github.com/YounesKhamouna/youneskhamouna.github.io/assets/142261924/04fdb969-7191-41bd-8004-46a946fe53a7)
 
 Each of these pages contributes to a holistic understanding of ambulatory surgery in California, offering valuable insights from different angles for a more comprehensive view of this critical healthcare domain.
 
