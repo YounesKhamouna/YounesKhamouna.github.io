@@ -15,8 +15,8 @@ The dataset offers valuable insights and holds potential for future predictive a
 ## THE DATA
 There are 2 datasets for this project extracted from the website of the Department of Health Care Access and Information. 
 You can access the datasets from the links below: 
--	Ambulatory Surgery - Characteristics by Patient County of Residence: <a href="https://data.chhs.ca.gov/dataset/ambulatory-surgery-characteristics-by-patient-county-of-residence_" target="_blank"> 
--	Ambulatory Surgery - Diagnosis, Procedure, and External Cause Codes : <a href="https://data.chhs.ca.gov/dataset/ambulatory-surgery-diagnosis-procedure-and-external-cause-codes" target="_blank"> 
+-	Ambulatory Surgery - Characteristics by Patient County of Residence: <a href="https://data.chhs.ca.gov/dataset/ambulatory-surgery-characteristics-by-patient-county-of-residence_" target="_blank"> </a>
+-	Ambulatory Surgery - Diagnosis, Procedure, and External Cause Codes : <a href="https://data.chhs.ca.gov/dataset/ambulatory-surgery-diagnosis-procedure-and-external-cause-codes" target="_blank"> </a>
 The first dataset specifically focuses on patients' county of residence and encompasses essential information such as discharge disposition, expected payer, sex, and race group. Additionally, the second dataset includes statewide counts for each diagnosis and procedure, with diagnosis codes reported using either ICD-9-CM or ICD-10-CM, while procedure codes are reported using CPT-4. 
 
 ## Techniques Used 
