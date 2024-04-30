@@ -11,7 +11,7 @@ lang: en-US
 # Site title
 title: "YOUNES KHAMOUNA<br/> <span style='font-size: 0.6em; font-style: italic; color: grey;'>Welcome to my Data Analysis Portfolio</span>"
 # A description of your site for meta tag, search engine results.
-description: "<span style='font-size: 0.8em; font-style: italic;'>I am a Data Analyst with Medical Background Proficient in SQL, PowerBI, Excel and Descriptive Statistics. <br/>Focused on: 📊Data Analysis 🧬Clinical Research 🩺Digital Health</span>"
+description: "<span style='font-size: 0.8em; font-style: italic;'>I am a Data Analyst with Medical Background.<br/> Proficient in SQL, PowerBI, Excel and Descriptive Statistics. <br/>Focused on: 📊Data Analysis 🧬Clinical Research 🩺Digital Health</span>"
 
 # The subpath of your site, e.g. /blog, for generating urls.
 baseurl: ""
