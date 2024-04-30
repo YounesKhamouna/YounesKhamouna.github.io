@@ -9,8 +9,7 @@
 lang: en-US
 
 # Site title
-title: "Younes Khamouna"
-subtitle: "Welcome to My Data Analysis Portfolio: Specializing in Healthcare Insights"
+title: "Younes Khamouna<br/> <span style="font-size: smaller;"> Welcome to My Data Analysis Portfolio: Specializing in Healthcare Insights </span>"
 # A description of your site for meta tag, search engine results.
 description: "Data Analyst with Medical Background Proficient in SQL, PowerBI, Excel and Statistics <br/> <br/>Interests: 📊 Data Analysis 🧬 Clinical Research 📊 Digital Health"
 
