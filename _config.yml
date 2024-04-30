@@ -30,7 +30,7 @@ navigation:
   - text: Home
     url: /
   - text: About
-    url: /about/
+    url: https://youneskhamouna.github.io/about/
   - #text: Projects
     #url: /Projects/
   - #text: Download
