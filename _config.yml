@@ -9,9 +9,9 @@
 lang: en-US
 
 # Site title
-title: "Younes Khamouna<br/>""Welcome to My Data Analysis Portfolio: Specializing in Healthcare Insights"
+title: "YOUNES KHAMOUNA"
 # A description of your site for meta tag, search engine results.
-description: "Data Analyst with Medical Background Proficient in SQL, PowerBI, Excel and Statistics <br/>Interests: 📊 Data Analysis 🧬 Clinical Research 📊 Digital Health"
+description: "Welcome to My Data Analysis Portfolio<br/>I am a Data Analyst with Medical Background Proficient in SQL, PowerBI, Excel and Statistics <br/>Interests: 📊 Data Analysis 🧬 Clinical Research 📊 Digital Health"
 
 # The subpath of your site, e.g. /blog, for generating urls.
 baseurl: ""
