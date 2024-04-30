@@ -106,3 +106,16 @@ The proportion of individuals belonging to the black racial group who undergo am
 
 ![image](https://github.com/YounesKhamouna/youneskhamouna.github.io/assets/142261924/16b0da94-3871-497a-a9bf-7341fb134909)
 
+## Conclusion
+
+Based on the comprehensive analysis presented in the report "Ambulatory Surgery in California," the following conclusion can serve to summarize the findings effectively:
+
+Conclusion
+
+This project has provided an exploration into the dynamics of ambulatory surgery in California from 2017 to 2021. Through the use of a PowerBI dashboard, we've highlighted critical trends and disparities within the field.<br/>
+Key findings indicate a significant increase in the number of surgeries across the state, with a brief decline during the COVID-19 pandemic, showcasing the resilience and growing necessity of ambulatory surgical services.<br/>
+The diagnosis and procedure data have revealed Essential Hypertension as the most prevalent condition treated, and the majority of patients experience positive outcomes with discharges to home.
+
+However, the data also underscores ongoing challenges such as gender and racial disparities in surgical care access and outcomes. These disparities prompt a call for targeted health policies and interventions that ensure equitable access to ambulatory surgical care across all demographics.<br/>
+As we move forward, leveraging this data for predictive analytics can further enhance healthcare planning and resource allocation, ensuring that the ambulatory surgery system in California remains robust and responsive to the needs of its diverse population.
+
