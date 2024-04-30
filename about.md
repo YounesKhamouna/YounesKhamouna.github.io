@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About this blog
+title: "About Me"   
 description: "Welcome to My Data Analysis Portfolio
 I am a Data Analyst with Medical Background Proficient in SQL, PowerBI, Excel and Statistics
 Interests: 📊 Data Analysis 🧬 Clinical Research 📊 Digital Health"
