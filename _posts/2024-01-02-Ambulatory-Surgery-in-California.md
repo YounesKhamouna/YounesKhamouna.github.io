@@ -15,8 +15,8 @@ The dataset offers valuable insights and holds potential for future predictive a
 ## THE DATA
 There are 2 datasets for this project extracted from the website of the Department of Health Care Access and Information. 
 You can access the datasets from the links below: 
--	Ambulatory Surgery - Characteristics by Patient County of Residence:  https://data.chhs.ca.gov/dataset/ambulatory-surgery-characteristics-by-patient-county-of-residence_ 
--	Ambulatory Surgery - Diagnosis, Procedure, and External Cause Codes : https://data.chhs.ca.gov/dataset/ambulatory-surgery-diagnosis-procedure-and-external-cause-codes 
+-	Ambulatory Surgery - Characteristics by Patient County of Residence: <a href="https://data.chhs.ca.gov/dataset/ambulatory-surgery-characteristics-by-patient-county-of-residence_" target="_blank"> 
+-	Ambulatory Surgery - Diagnosis, Procedure, and External Cause Codes : <a href="https://data.chhs.ca.gov/dataset/ambulatory-surgery-diagnosis-procedure-and-external-cause-codes" target="_blank"> 
 The first dataset specifically focuses on patients' county of residence and encompasses essential information such as discharge disposition, expected payer, sex, and race group. Additionally, the second dataset includes statewide counts for each diagnosis and procedure, with diagnosis codes reported using either ICD-9-CM or ICD-10-CM, while procedure codes are reported using CPT-4. 
 
 ## Techniques Used 
@@ -109,8 +109,7 @@ The proportion of individuals belonging to the black racial group who undergo am
 ## Conclusion
 This project has provided an exploration into the dynamics of ambulatory surgery in California from 2017 to 2021. Through the use of a PowerBI dashboard, we've highlighted critical trends and disparities within the field.<br/>
 Key findings indicate a significant increase in the number of surgeries across the state, with a brief decline during the COVID-19 pandemic, showcasing the resilience and growing necessity of ambulatory surgical services.<br/>
-The diagnosis and procedure data have revealed Essential Hypertension as the most prevalent condition treated, and the majority of patients experience positive outcomes with discharges to home.
-
+The diagnosis and procedure data have revealed Essential Hypertension as the most prevalent condition treated, and the majority of patients experience positive outcomes with discharges to home.<br/>
 However, the data also underscores ongoing challenges such as gender and racial disparities in surgical care access and outcomes. These disparities prompt a call for targeted health policies and interventions that ensure equitable access to ambulatory surgical care across all demographics.<br/>
 As we move forward, leveraging this data for predictive analytics can further enhance healthcare planning and resource allocation, ensuring that the ambulatory surgery system in California remains robust and responsive to the needs of its diverse population.
 
