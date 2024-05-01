@@ -12,7 +12,7 @@ Canada is in the middle of a public health crisis due to the harm of opioids, st
 The dataset offers valuable insights to tackle this crisis.
 
 <!--more-->
-
+<a href="Download_Projects/DataAll.xlsx" download="Download_Projects/DataAll.xlsx">Click here to download the Excel Worksheet (.xlsx) </a>
 ## The DATA
 
 The data for this project was extracted from the InfoBase of the Health Agency of Canada. 
