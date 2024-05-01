@@ -19,7 +19,7 @@ The data for this project was extracted from the InfoBase of the Health Agency o
 You can access the datasets from the links below: 
 -	<a href= "https://health-infobase.canada.ca/substance-related-harms/opioids-stimulants/">the Federal, provincial, and territorial Special Advisory Committee on the Epidemic of Opioid Overdoses</a><br/>
 ## Objectives
-The objective of this project is to display the data from the 3 provinces in an interactive dashboard to be able to compare them and to have insights about the opioid crisis in each provinces.
+The objective of this project is to display the data from 4 provinces in an interactive dashboard to be able to compare them and to have insights about the opioid crisis in each provinces.
 
 ## Techniques Used 
 1.	Data Cleaning
