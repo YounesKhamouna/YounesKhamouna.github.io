@@ -44,27 +44,27 @@ The objective of this project is to display the data from the 3 provinces in an 
 
 ## DATA ANALYSIS
 
-## 1 - How did the death toll compare between the 4 provinces?
+#### 1 - How did the death toll compare between the 4 provinces?
 The number of opioids-related deaths has increased steadily in Ontario, Alberta, and BC starting 2019 until 2021. After 2021 we notice a sharp decline.
 Regarding Nova Scotia, the number of deaths stayed almost the same. 
 
 ![image](https://github.com/YounesKhamouna/youneskhamouna.github.io/assets/142261924/4ec74d2d-6748-43a7-a08c-9c722670af2c)
 
-## 2-	What is the death toll of stimulants compared to opioids?
+#### 2-	What is the death toll of stimulants compared to opioids?
 Opioids are responsible of far more deaths in the 4 provinces than stimulants.
 Opioids are responsible for nearly 40,000 cumulative deaths in Ontario. There is no data about stimulants deaths in Alberta. 
 
 ![image](https://github.com/YounesKhamouna/youneskhamouna.github.io/assets/142261924/724b7e43-e11e-4d2f-b08c-f883ff181bcb)
 
 
-## 3 - What are the demographic specificities of the opioid crisis?
+#### 3 - What are the demographic specificities of the opioid crisis?
 In all 4 provinces, Males represent mor than 2 thirds of opioids-related deaths. The highest male rate is in British Columbia where males are 75% among the victims. 
 The same tendency can be observed with stimulants. 
 The data available related to age groups is a national data and it shows that young people between 30 – 39 year-old are 27% among victims, followed by the 40-49 y-o by 23.2%. 
 
 ![image](https://github.com/YounesKhamouna/youneskhamouna.github.io/assets/142261924/55aa667a-1758-48f5-adbd-a9b30d468ad1)
 
-## 4	- What is the origin of opioids and what kind of opioids are involved in opioid-related deaths?
+#### 4	- What is the origin of opioids and what kind of opioids are involved in opioid-related deaths?
 The non-pharmaceuticals opioids are the dominant cause of opioid-related deaths by more than 75% of cases. 
 
 
@@ -82,3 +82,7 @@ The cocaine is the main cause of deaths by stimulants in Canada and in the diffe
 Methamphetamines are the second most common stimulants found in stimulants-related deaths. 
 
 ![image](https://github.com/YounesKhamouna/youneskhamouna.github.io/assets/142261924/4991dda4-2748-4741-938a-79d90f7989d7)
+
+## Conclusion
+
+The analysis reveals that opioid-related deaths have steadily increased in Ontario, Alberta, and British Columbia until 2021, while Nova Scotia's figures remained relatively stable. Opioids, particularly fentanyl, were implicated in over 75% of these deaths, with males constituting the majority of the victims. The data indicates that non-pharmaceutical opioids are the predominant cause, contrasting with stimulant-related deaths, where cocaine is the leading factor. This evidence points to the need for province-specific strategies that address the dominant substances and affected demographics to effectively mitigate this public health crisis.
