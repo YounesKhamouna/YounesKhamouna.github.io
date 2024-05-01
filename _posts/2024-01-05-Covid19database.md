@@ -11,7 +11,7 @@ Exploring the COVID-19 World Database And Calculating Three Key Public Health In
 
 
 <!--more-->
-
+<a href="Download_Projects/Covid19World.sql" download="Download_Projects/Covid19World.sql">Click here to download the SQL SERVER Query file (.sql)</a>
 ## Database Overview
 The Covid19World database contains several crucial tables for understanding the global impact of Covid-19, including CovidDeaths, CovidConfirmedCases, CovidVaccination, and CovidOthers. 
 The SQL queries cover a range of operations, including data exploration, data cleaning, complex queries, view creation, and temporary table manipulation, reflecting the coder's ability to handle extensive and intricate database tasks effectively.
