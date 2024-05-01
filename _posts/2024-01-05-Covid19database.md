@@ -195,4 +195,4 @@ FROM ...;
 </pre>
 
 ## Conclusion
-This project SQL highlights the critical insights that can be derived from well-structured SQL queries in understanding public health crises.
+This project highlights the critical insights that can be derived from well-structured SQL queries in understanding public health crises.
