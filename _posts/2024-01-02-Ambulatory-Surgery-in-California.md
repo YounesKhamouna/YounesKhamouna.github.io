@@ -11,7 +11,7 @@ This project utilized a comprehensive dataset comprising annual ambulatory surge
 The dataset offers valuable insights and holds potential for future predictive analysis.
 
 <!--more-->
-You can click here to download the Power BI report (pbix file) <a href="Download_Projects/AmbSurgery_CA.pbix" download="Download_Projects/AmbSurgery_CA.pbix">Download File</a>
+<a href="Download_Projects/AmbSurgery_CA.pbix" download="Download_Projects/AmbSurgery_CA.pbix">Click here to download the Power BI report (pbix file) </a>
 
 ## THE DATA
 There are 2 datasets for this project extracted from the website of the Department of Health Care Access and Information. 
