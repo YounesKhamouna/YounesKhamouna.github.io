@@ -17,28 +17,28 @@ The dataset offers valuable insights to tackle this crisis.
 
 The data for this project was extracted from the InfoBase of the Health Agency of Canada. 
 You can access the datasets from the links below: 
--	the Federal, provincial, and territorial Special Advisory Committee on the Epidemic of Opioid Overdoses:  https://health-infobase.canada.ca/substance-related-harms/opioids-stimulants/ 
+-	<a href= "https://health-infobase.canada.ca/substance-related-harms/opioids-stimulants/">the Federal, provincial, and territorial Special Advisory Committee on the Epidemic of Opioid Overdoses</a>
 Objectives
 The objective of this project is to display the data from the 3 provinces in an interactive dashboard to be able to compare them and to have insights about the opioid crisis in each provinces.
 
 ## Techniques Used 
-1.	Data Cleaning +
-2.	Data Modelling: PowerQuery +
-3.	PivotTables +
-4.	PivotCharts +
-5.	Slicers +
-6.	Functions: SUMIFS -
-7.	Conditional Formatting -
+1.	Data Cleaning
+2.	Data Modelling: PowerQuery
+3.	PivotTables
+4.	PivotCharts
+5.	Slicers
+6.	Functions: SUMIFS
+7.	Conditional Formatting
 
 
 
 
 ## QUESTIONS TO ANSWER
-1-	How did the death toll compare between the 4 provinces?
-2-	What is the death toll of stimulants compared to opioids?
-3-	What are the demographic specificities of the opioid’s crisis?
-4-	What is the origin of opioids and what kind of opioids are involved in opioid-related deaths?
-5-	 What type of stimulants are involved?
+1-	How did the death toll compare between the 4 provinces?<br/>
+2-	What is the death toll of stimulants compared to opioids? <br/>
+3-	What are the demographic specificities of the opioid’s crisis? <br/>
+4-	What is the origin of opioids and what kind of opioids are involved in opioid-related deaths?<br/>
+5-	 What type of stimulants are involved?<br/>
 
 
 
@@ -77,7 +77,7 @@ Fentanyl is responsible of more than 75% of opioid-related deaths in Canada.
 ![image](https://github.com/YounesKhamouna/youneskhamouna.github.io/assets/142261924/2d023f78-e9f8-4f31-bddd-90beb2cd28f4)
 
 
-## 5- What type of stimulants are involved?
+#### 5- What type of stimulants are involved?
 The cocaine is the main cause of deaths by stimulants in Canada and in the different provinces of our study by more being involved in more than 70 % of the cases.
 Methamphetamines are the second most common stimulants found in stimulants-related deaths. 
 
